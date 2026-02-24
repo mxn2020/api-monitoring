@@ -1,64 +1,94 @@
 # API Monitoring Dashboard
 
-## Pages & Features
+Real-time API endpoint monitoring with uptime and performance tracking.
 
-### 1. Dashboard
-- Global health status (all APIs at a glance)
-- Uptime percentage cards per API
-- Response time chart (P50, P95, P99)
-- Active incidents banner
-- Error rate trends
+Part of [The Mehdi Verse](https://github.com/mxn2020) — a collection of open-source sample applications.
 
-### 2. Monitors
-- Monitor list with status (up, degraded, down)
-- Create monitor (URL, method, interval, expected status)
-- Monitor detail: uptime chart, response time history, logs
-- Health check configuration (timeout, retries, headers)
-- SSL certificate expiry monitoring
-- Pause / resume monitors
+## Tech Stack
 
-### 3. Incidents
-- Active & past incidents list
-- Incident detail: timeline, affected monitors, root cause
-- Create / acknowledge / resolve incident
-- Incident severity levels (minor, major, critical)
-- Post-mortem notes
+- **Frontend**: React 19 + TypeScript + Vite
+- **Backend**: [Shared Convex deployment](https://github.com/mxn2020/the-mehdi-verse-convex-backend)
+- **Auth**: Email/password via `@convex-dev/auth`
 
-### 4. Status Page (Public)
-- Public status page for end users
-- Per-service status indicators
-- Incident history & updates
-- Scheduled maintenance announcements
-- Subscribe to updates (email / webhook)
+## Getting Started
 
-### 5. Alerts
-- Alert rules per monitor (down for X minutes, slow response)
-- Notification channels (email, Slack, Discord, SMS, webhook)
-- Escalation policies
-- Alert history & acknowledgment
-- On-call rotation scheduling
+```bash
+npm install
+cp .env.example .env.local
+# Set VITE_CONVEX_URL to your deployment URL
+npm run dev
+```
 
-### 6. Logs & History
-- Request / response log per check
-- Filter by status code, response time, date
-- Detailed inspection (headers, body, timing)
-- Error pattern detection
+## License
 
-### 7. Multi-Location
-- Check from multiple geographic locations
-- Per-location response time comparison
-- Location-specific alerting
+MIT © Mehdi Nabhani
 
-### 8. Reports
-- Uptime report by period (daily, weekly, monthly)
-- SLA compliance tracking
-- Response time trends & degradation
-- Incident frequency analysis
-- Export as PDF / CSV
+---
 
-### 9. Settings
-- Team management & notification routing
-- Global alert defaults
-- Status page customization (branding, domain)
-- API key management
-- Integration settings (PagerDuty, OpsGenie)
+<details>
+<summary>📋 Original Feature Spec</summary>
+
+# {{APP_TITLE}}
+
+{{APP_DESCRIPTION}}
+
+Part of [The Mehdi Verse](https://github.com/mxn2020) — a collection of open-source sample applications.
+
+## Tech Stack
+
+- **Frontend**: React 19 + TypeScript + Vite
+- **Backend**: [Shared Convex deployment](https://github.com/mxn2020/the-mehdi-verse-convex-backend)
+- **Auth**: Email/password via `@convex-dev/auth`
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js 22+
+- A running [shared Convex backend](https://github.com/mxn2020/the-mehdi-verse-convex-backend)
+
+### Setup
+
+```bash
+# Install dependencies
+npm install
+
+# Create .env.local with your Convex URL
+cp .env.example .env.local
+# Edit .env.local and set VITE_CONVEX_URL to your deployment URL
+
+# Start the dev server
+npm run dev
+```
+
+Open [http://localhost:5173](http://localhost:5173) to view the app.
+
+## Scripts
+
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start Vite dev server |
+| `npm run build` | Build for production |
+| `npm run preview` | Preview production build |
+| `npm run typecheck` | Run TypeScript type checking |
+
+## Project Structure
+
+```
+src/
+  main.tsx              # Entry point with ConvexAuthProvider
+  App.tsx               # Auth routing (Landing vs Dashboard)
+  App.css               # Component styles
+  index.css             # Global styles & design tokens
+  components/
+    Landing.tsx          # Marketing/landing page
+    SignIn.tsx           # Auth form (sign-in/sign-up)
+    Dashboard.tsx        # Authenticated app shell
+api.ts                   # Convex API types (from shared backend)
+```
+
+## License
+
+MIT © Mehdi Nabhani
+
+</details>
